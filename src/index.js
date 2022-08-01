@@ -24,7 +24,7 @@ root.render(
         />
         <Route path="login" element={<LoginPage />} />
         <Route path="register" element={<RegisterPage />} />
-        <Route path="detail/:id" element={<NewsDetail />} />
+        <Route path="detail/:publishedAt" element={<NewsDetail />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

@@ -1,8 +1,8 @@
 import React from "react";
 import { Button, Toolbar, AppBar, Typography, List, ListItem } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
-import CardGiftcardIcon from "@mui/icons-material/CardGiftcard";
-import NotificationsIcon from "@mui/icons-material/Notifications";
+// import CardGiftcardIcon from "@mui/icons-material/CardGiftcard";
+// import NotificationsIcon from "@mui/icons-material/Notifications";
 import { useNavigate } from "react-router-dom";
 import { logoutFromApps } from "../authentication/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -36,11 +36,13 @@ const Navbar = () => {
               justifyContent: "space-between",
             }}
           >
-            <ListItem sx={{ flexShrink: 2 }}>Home</ListItem>
-            <ListItem sx={{ flexShrink: 2 }}>Series</ListItem>
-            <ListItem sx={{ flexShrink: 2 }}>Movies</ListItem>
-            <ListItem sx={{ flexShrink: 1.5 }}>New and Popular</ListItem>
-            <ListItem sx={{ flexShrink: 2 }}>MyList</ListItem>
+            <ListItem>Home</ListItem>
+            <ListItem>Business</ListItem>
+            <ListItem>Entertainment</ListItem>
+            <ListItem>Health</ListItem>
+            <ListItem>Science</ListItem>
+            <ListItem>Sports</ListItem>
+            <ListItem>Technology</ListItem>
           </List>
         </Toolbar>
         <List
@@ -53,18 +55,28 @@ const Navbar = () => {
           <ListItem>
             <SearchIcon />
           </ListItem>
+          {/* <ListItem>
+            <Button variant="outlined" size="small" onClick={buttonLoginOrLogout}>
+              {loginOrLogout === "login" ? "Login" : "Logout"}
+            </Button>
+
+            {loginOrLogout === "login" ? (
+              <Link to="/login">
+                <Typography variant="body1">Keluar</Typography>
+              </Link>
+            ) : (
+              <Link to="/login">
+                <Typography variant="body1">Masuk</Typography>
+              </Link>
+            )}
+          </ListItem> */}
 
           <ListItem>
             <Button color="inherit" onClick={buttonLogout}>
               Logout
             </Button>
           </ListItem>
-          <ListItem>
-            <CardGiftcardIcon />
-          </ListItem>
-          <ListItem>
-            <NotificationsIcon />
-          </ListItem>
+
           <ListItem>
             Halo,
             {user ? <strong>{user.email}</strong> : ""}

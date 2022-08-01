@@ -10,11 +10,11 @@ function App() {
     <>
       <ThemeProvider theme={theme}>
         <Navbar />
-
-        <Box>
+ 
+        <Box >
           <HeadLine />
         </Box>
-
+ 	
         <Footer />
       </ThemeProvider>
     </>

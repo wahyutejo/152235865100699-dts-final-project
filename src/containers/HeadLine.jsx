@@ -23,7 +23,7 @@ const HeadLine = () => {
       <Typography variant="h5"> HeadLine</Typography>
       <Box>
         {headline.map((news) => {
-          return <CardNews news={news} key={news.title} />;
+          return <CardNews news={news} />;
         })}
       </Box>
     </Box>

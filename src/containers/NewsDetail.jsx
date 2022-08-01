@@ -1,36 +1,47 @@
-import React, { useState, useEffect } from "react";
-import { Typography, Box } from "@mui/material";
-import { useParams } from "react-router-dom";
-import { Detail } from "../components/CardNews";
 import NewsApi from "../services/NewsAPI";
+import React, { useState, useEffect } from "react";
+import { Box, Typography, CardMedia } from "@mui/material";
+import { useParams } from "react-router-dom";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const NewsDetail = () => {
-  const cek = Detail();
-  console.log(cek);
-  const [news, setNews] = useState({});
-  const params = useParams();
+  const [headline, setHeadline] = useState([]);
+  let { publishedAt } = useParams();
 
   useEffect(() => {
-    const newsDetail = Detail(params.publishedAt);
-    const data = async () => {
+    const fetchData = async () => {
       try {
-        const responseNews = await NewsApi.get(`/top-headline/${newsDetail}`);
-        setNews(responseNews);
+        const responseHeadline = await NewsApi.get("/top-headlines");
+        setHeadline(responseHeadline.data.articles);
       } catch (err) {
         console.log(err);
       }
     };
-    data();
-  }, [params.publishedAt]);
+    fetchData();
+  }, []);
 
   return (
-    <>
-      <Box sx={{ m: 3 }}>
-        <Typography variant="h3">Halo</Typography>
-        <Typography variant="h3">{news.title}</Typography>
-        <Typography variant="h3">{news?.title}</Typography>
-      </Box>
-    </>
+    <Box sx={{ mt: 20 }}>
+      {headline
+        .filter((card) => card.publishedAt === publishedAt)
+        .map((card) => (
+          <>
+          <Navbar />
+          <Box>
+            <CardMedia component="img" sx={{ height: 500, width: 700 }} image={card.urlToImage} alt={card.title}></CardMedia>
+            <Typography variant="h5">{card.title}</Typography>
+            <Typography variant="body2">{card.description}</Typography>
+            <Typography variant="body1">{card.content}</Typography>
+            <Typography variant="body1">{card.author}</Typography>
+            <Typography>
+            <a href={card.url}>Sumber</a>{card.source.name}
+            </Typography>
+          </Box>
+          <Footer />
+          </>
+        ))}
+    </Box>
   );
 };
 

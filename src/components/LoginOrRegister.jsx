@@ -53,7 +53,7 @@ const LoginOrRegisterForm = ({ loginOrRegister }) => {
 
   return (
     <Grid container spacing={0} direction="column" alignItems="center" justifyContent="center" stlye={{ minHeight: "95vh" }}>
-      <Box component="form" noValidate>
+      <Box component="form" noValidate sx={{ border: "1px solid grey", borderRadius: "1em", p: 1, display: "flex", flexDirection: "column", gap: 1, mt: 20 }}>
         <Typography variant="body1">{loginOrRegister === "login" ? "Login Page" : "Register Page"}</Typography>
 
         <TextField label="email" type="email" variant="outlined" size="small" value={credential.email} onChange={textFieldEmailOnChange} />
