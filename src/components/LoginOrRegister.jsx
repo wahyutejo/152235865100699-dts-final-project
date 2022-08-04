@@ -57,7 +57,6 @@ const LoginOrRegisterForm = ({ loginOrRegister }) => {
         <Typography variant="body1">{loginOrRegister === "login" ? "Login Page" : "Register Page"}</Typography>
 
         <TextField label="email" type="email" variant="outlined" size="small" value={credential.email} onChange={textFieldEmailOnChange} />
-
         <TextField label="password" type="Password" variant="outlined" size="small" value={credential.password} onChange={textFieldPasswordOnChange} />
 
         <Button variant="outlined" size="small" onClick={buttonLoginOrRegister}>

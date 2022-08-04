@@ -1,4 +1,4 @@
-import NewsApi from "../services/NewsAPI";
+import { headlineApi } from "../services/NewsAPI";
 import React, { useState, useEffect } from "react";
 import { Box, Typography } from "@mui/material";
 import { CardNews } from "../components/CardNews";
@@ -9,7 +9,7 @@ const HeadLine = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const responseHeadline = await NewsApi.get("/top-headlines");
+        const responseHeadline = await headlineApi.get("/top-headlines");
         setHeadline(responseHeadline.data.articles);
       } catch (err) {
         console.log(err);
@@ -20,10 +20,12 @@ const HeadLine = () => {
 
   return (
     <Box ClassName="headline" sx={{ mt: 20 }}>
-      <Typography variant="h5"> HeadLine</Typography>
+      <Typography variant="h5" sx={{ px: 5 }}>
+        Berita Terbaru
+      </Typography>
       <Box>
         {headline.map((news) => {
-          return <CardNews news={news} />;
+          return <CardNews news={news} key={news.title} />;
         })}
       </Box>
     </Box>
