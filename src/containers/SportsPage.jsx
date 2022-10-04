@@ -1,17 +1,17 @@
-import { entertainmentApi } from "../services/NewsAPI";
+import { sportsApi } from "../services/NewsAPI";
 import React, { useState, useEffect } from "react";
 import { Box, Typography, ThemeProvider, CardMedia } from "@mui/material";
 import theme from "../themes/Theme";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-const Entertainment = () => {
-  const [entertainment, setNews] = useState([]);
+const SportsPage = () => {
+  const [sports, setNews] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const responseHeadline = await entertainmentApi.get("/top-headlines");
+        const responseHeadline = await sportsApi.get("/top-headlines");
         setNews(responseHeadline.data.articles);
       } catch (err) {
         console.log(err);
@@ -25,10 +25,10 @@ const Entertainment = () => {
       <Navbar />
       <Box ClassName="headline" sx={{ mt: 20 }}>
         <Typography variant="h5" sx={{ px: 5 }}>
-          Entertainment
+          SPORTS
         </Typography>
         <Box>
-          {entertainment.map((news) => (
+          {sports.map((news) => (
             <Box sx={{ m: 3, display: "flex", justifyContent: "center" }}>
               <Box>
                 <CardMedia component="img" sx={{ height: 300, width: 500 }} image={news.image} alt={news.title}></CardMedia>
@@ -53,4 +53,4 @@ const Entertainment = () => {
   );
 };
 
-export default Entertainment;
+export default SportsPage;

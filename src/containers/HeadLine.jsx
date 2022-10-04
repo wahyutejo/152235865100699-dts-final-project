@@ -21,7 +21,7 @@ const HeadLine = () => {
   return (
     <Box ClassName="headline" sx={{ mt: 20 }}>
       <Typography variant="h5" sx={{ px: 5 }}>
-        Berita Terbaru
+        BREAKING NEWS
       </Typography>
       <Box>
         {headline.map((news) => {

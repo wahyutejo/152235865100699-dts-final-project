@@ -12,6 +12,11 @@ import NewsDetail from "./containers/NewsDetail";
 import BusinessPage from "./containers/BusinessPage";
 import EntertainmentPage from "./containers/EntertainmentPage";
 import HealthPage from "./containers/HealthPage";
+import NationPage from "./containers/NationPage";
+import SciencePage from "./containers/SciencePage";
+import SportsPage from "./containers/SportsPage";
+import TechnologyPage from "./containers/TechnologyPage";
+import WorldPage from "./containers/WorldPage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -31,6 +36,11 @@ root.render(
         <Route path="business" element={<BusinessPage />} />
         <Route path="entertainment" element={<EntertainmentPage />} />
         <Route path="health" element={<HealthPage />} />
+        <Route path="nation" element={<NationPage />} />
+        <Route path="science" element={<SciencePage />} />
+        <Route path="sports" element={<SportsPage />} />
+        <Route path="technology" element={<TechnologyPage />} />
+        <Route path="world" element={<WorldPage />} />
         <Route path="detail/:publishedAt" element={<NewsDetail />} />
       </Routes>
     </BrowserRouter>

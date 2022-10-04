@@ -26,6 +26,21 @@ const Navbar = () => {
   const health = () => {
     navigate("/health");
   };
+  const nation = () => {
+    navigate("/nation");
+  };
+  const science = () => {
+    navigate("/science");
+  };
+  const sports = () => {
+    navigate("/sports");
+  };
+  const technology = () => {
+    navigate("/technology");
+  };
+  const world = () => {
+    navigate("/world");
+  };
 
   const buttonLogout = async () => {
     await logoutFromApps();
@@ -61,6 +76,21 @@ const Navbar = () => {
             </ListItem>
             <ListItem onClick={health} sx={{ "&:hover": { cursor: "pointer" } }}>
               Health
+            </ListItem>
+            <ListItem onClick={nation} sx={{ "&:hover": { cursor: "pointer" } }}>
+              Nation
+            </ListItem>
+            <ListItem onClick={science} sx={{ "&:hover": { cursor: "pointer" } }}>
+              Science
+            </ListItem>
+            <ListItem onClick={sports} sx={{ "&:hover": { cursor: "pointer" } }}>
+              Sports
+            </ListItem>
+            <ListItem onClick={technology} sx={{ "&:hover": { cursor: "pointer" } }}>
+              Technology
+            </ListItem>
+            <ListItem onClick={world} sx={{ "&:hover": { cursor: "pointer" } }}>
+              World
             </ListItem>
           </List>
         </Toolbar>

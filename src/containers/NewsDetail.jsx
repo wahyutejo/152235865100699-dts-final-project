@@ -31,7 +31,7 @@ const NewsDetail = () => {
           .map((card) => (
             <Box sx={{ display: "flex", flexDirection: "column" }}>
               <Grid container justifyContent="center" alignItems="center">
-                <CardMedia component="img" sx={{ height: 500, width: 700, borderRadius: "0.5rem" }} image={card.urlToImage} alt={card.title}></CardMedia>
+                <CardMedia component="img" sx={{ height: 500, width: 700, borderRadius: "0.5rem" }} image={card.image} alt={card.title}></CardMedia>
               </Grid>
 
               <Typography variant="h5" textAlign="center" sx={{ m: 4 }}>
@@ -39,9 +39,8 @@ const NewsDetail = () => {
               </Typography>
               <Typography variant="body2">{card.description}</Typography>
               <Typography variant="body1">{card.content}</Typography>
-              <Typography variant="body1">{card.author}</Typography>
               <Typography sx={{ mt: 5 }}>
-                <a href={card.url}>Sumber</a> {card.source.name}
+                <a href={card.url}>Read more</a> {card.source.name}
               </Typography>
             </Box>
           ))}

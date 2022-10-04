@@ -31,7 +31,7 @@ const Health = () => {
           {health.map((news) => (
             <Box sx={{ m: 3, display: "flex", justifyContent: "center" }}>
               <Box>
-                <CardMedia component="img" sx={{ height: 300, width: 500 }} image={news.urlToImage} alt={news.title}></CardMedia>
+                <CardMedia component="img" sx={{ height: 300, width: 500 }} image={news.image} alt={news.title}></CardMedia>
               </Box>
               <Box sx={{ mx: 3, my: 1 }}>
                 <Box sx={{ display: "flex", flexDirection: "column" }}>
