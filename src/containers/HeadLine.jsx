@@ -1,6 +1,6 @@
 import { headlineApi } from "../services/NewsAPI";
 import React, { useState, useEffect } from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Container } from "@mui/material";
 import { CardNews } from "../components/CardNews";
 
 const HeadLine = () => {
@@ -19,16 +19,19 @@ const HeadLine = () => {
   }, []);
 
   return (
-    <Box ClassName="headline" sx={{ mt: 20 }}>
-      <Typography variant="h5" sx={{ px: 5 }}>
-        BREAKING NEWS
-      </Typography>
-      <Box>
-        {headline.map((news) => {
-          return <CardNews news={news} key={news.title} />;
-        })}
+    <Container>
+      <Box ClassName="card-news" sx={{ mt: 20 }}>
+        <Typography variant="h5" sx={{ px: 5 }}>
+          BREAKING NEWS
+        </Typography>
+
+        <Box>
+          {headline.map((news) => {
+            return <CardNews news={news} key={news.title} />;
+          })}
+        </Box>
       </Box>
-    </Box>
+    </Container>
   );
 };
 

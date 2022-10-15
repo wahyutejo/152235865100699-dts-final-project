@@ -1,7 +1,6 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 
-
 const Footer = () => {
   return (
     <Box sx={{ mt: 20, backgroundColor: "#ff5748", color: "#fff", p: 3 }}>
