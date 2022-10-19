@@ -5,6 +5,7 @@ import theme from "../themes/Theme";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { CardNews } from "../components/CardNews";
+import Drawer from "../components/NavbarDrawer";
 
 const WorldPage = () => {
   const [world, setNews] = useState([]);
@@ -24,8 +25,9 @@ const WorldPage = () => {
   return (
     <ThemeProvider theme={theme}>
       <Navbar />
+      <Drawer />
       <Container>
-        <Box ClassName="headline" sx={{ mt: 20 }}>
+        <Box>
           <Typography variant="h5" sx={{ px: 5 }}>
             WORLD
           </Typography>

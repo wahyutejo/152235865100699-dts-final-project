@@ -37,30 +37,36 @@
   }
 }
 
-
-
-/*
-@media only screen and (min-width: 500px) {
-  .notes-list {
-    grid-template-columns: 1fr 1fr;
-  }
+.navbar-1 {
+  visibility: visible;
 }
 
-@media only screen and (min-width: 800px) {
-  .notes-list {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .note-search input {
-    min-width: 400px;
-  }
+.navbar-2 {
+  visibility: hidden;
 }
-*/
 
-
-@media only screen and (min-width: 500px) {
+@media only screen and (max-width: 1000px) {
   .card-news {
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
+    border-top: darkgray solid 0.1rem;
+    padding: 2rem;
+  }
+
+  .card-img {
+    margin-top: 2rem;
+  }
+
+  .title {
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .navbar-1 {
+    visibility: hidden;
+  }
+
+  .navbar-2 {
+    visibility: visible;
   }
 }
-

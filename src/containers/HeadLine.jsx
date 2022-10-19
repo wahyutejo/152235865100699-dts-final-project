@@ -20,7 +20,7 @@ const HeadLine = () => {
 
   return (
     <Container>
-      <Box ClassName="card-news" sx={{ mt: 20 }}>
+      <Box>
         <Typography variant="h5" sx={{ px: 5 }}>
           BREAKING NEWS
         </Typography>
