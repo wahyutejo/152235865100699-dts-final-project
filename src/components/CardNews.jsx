@@ -10,7 +10,7 @@ export function CardNews(props) {
   return (
     <Box className="card-news" sx={{ m: 3, display: "flex", justifyContent: "left" }}>
       <Box className="card-img">
-        <CardMedia component="img" sx={{ height: 300, width: 500 }} image={props.news.image} alt={props.news.title}></CardMedia>
+        <CardMedia component="img" sx={{ height: 300, width: 500 }} image={props.news.image} alt={props.news.title} />
       </Box>
       <Box className="card-box">
         <Box className="card-box-inner" sx={{ display: "flex", flexDirection: "column" }}>

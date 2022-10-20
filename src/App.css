@@ -76,6 +76,7 @@
 
   .navbar-2 {
     visibility: visible;
+    max-width: 100vw;
   }
 }
 
@@ -110,5 +111,10 @@
   .card-news {
     padding: 0;
     margin: 0.5rem;
+  }
+
+  img.MuiCardMedia-root {
+    max-width: 100vw;
+    height: 15rem;
   }
 }
