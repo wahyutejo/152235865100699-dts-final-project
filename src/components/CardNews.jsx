@@ -12,8 +12,8 @@ export function CardNews(props) {
       <Box className="card-img">
         <CardMedia component="img" sx={{ height: 300, width: 500 }} image={props.news.image} alt={props.news.title}></CardMedia>
       </Box>
-      <Box sx={{ mx: 3, my: 1 }}>
-        <Box sx={{ display: "flex", flexDirection: "column" }}>
+      <Box className="card-box">
+        <Box className="card-box-inner" sx={{ display: "flex", flexDirection: "column" }}>
           <Typography className="title" variant="h5" sx={{ "&:hover": { cursor: "pointer" }, mb: 2 }}>
             <Link to={`/detail/${props.news.publishedAt}`} style={{ textDecoration: "none", color: "black" }}>
               {props.news.title}

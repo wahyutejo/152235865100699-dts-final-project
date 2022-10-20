@@ -45,12 +45,20 @@
   visibility: hidden;
 }
 
+.card-news {
+  padding: 0.5rem;
+}
+
+.card-box {
+  margin: 0 1rem 2rem 2rem;
+}
+
 @media only screen and (max-width: 1000px) {
   .card-news {
     flex-direction: column;
     align-items: center;
     border-top: darkgray solid 0.1rem;
-    padding: 2rem;
+    padding: 2rem 0 0 0;
   }
 
   .card-img {
@@ -68,5 +76,39 @@
 
   .navbar-2 {
     visibility: visible;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .card-box {
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+  }
+
+  .card-box-inner {
+    visibility: visible;
+  }
+
+  .card-news {
+    padding: 2rem 0 0 0;
+    margin: 0.5rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .card-box {
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+  }
+
+  .card-box-inner {
+    visibility: visible;
+  }
+
+  .card-news {
+    padding: 0;
+    margin: 0.5rem;
   }
 }

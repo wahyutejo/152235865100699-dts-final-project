@@ -1,10 +1,7 @@
 import React from "react";
-import { Button, Toolbar, AppBar, Typography, List, ListItem } from "@mui/material";
+import { Box, Toolbar, AppBar, List, ListItem } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { useNavigate } from "react-router-dom";
-import { logoutFromApps } from "../authentication/firebase";
-import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "../authentication/firebase";
 import { styled, alpha } from "@mui/material/styles";
 import InputBase from "@mui/material/InputBase";
 import HomeIcon from "@mui/icons-material/Home";
@@ -12,11 +9,6 @@ import "../App.css";
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const [user] = useAuthState(auth);
-
-  const buttonLogin = () => {
-    navigate("/login");
-  };
 
   const home = () => {
     navigate("/");
@@ -44,11 +36,6 @@ const Navbar = () => {
   };
   const world = () => {
     navigate("/world");
-  };
-
-  const buttonLogout = async () => {
-    await logoutFromApps();
-    navigate("/login");
   };
 
   const Search = styled("div")(({ theme }) => ({
@@ -95,7 +82,7 @@ const Navbar = () => {
 
   return (
     <AppBar className="navbar-1">
-      <Typography sx={{ display: "flex", justifyContent: "space-between" }}>
+      <Box sx={{ display: "flex", justifyContent: "space-between" }}>
         <List
           sx={{
             display: "flex",
@@ -103,14 +90,11 @@ const Navbar = () => {
             flexBasis: "20%",
           }}
         >
-          <ListItem onClick={home} sx={{ "&:hover": { cursor: "pointer" } }}>
-            Home
-          </ListItem>
-          <ListItem onClick={home}>
+          <ListItem onClick={home} sx={{ ml: 5, "&:hover": { cursor: "pointer" } }}>
             <HomeIcon />
           </ListItem>
         </List>
-        <Toolbar sx={{ justifyContent: "center" }}>
+        <Toolbar sx={{ justifyContent: "center", mx: 5 }}>
           <List
             sx={{
               display: "flex",
@@ -143,13 +127,8 @@ const Navbar = () => {
             </ListItem>
           </List>
         </Toolbar>
-        <List
-          sx={{
-            display: "flex",
-            justifyContent: "space-around",
-            flexBasis: "20%",
-          }}
-        >
+
+        <List sx={{ mr: 5 }}>
           <ListItem>
             <Search>
               <SearchIconWrapper>
@@ -158,22 +137,8 @@ const Navbar = () => {
               <StyledInputBase placeholder="Search…" inputProps={{ "aria-label": "search" }} />
             </Search>
           </ListItem>
-
-          <ListItem>
-            {user ? (
-              <Button color="inherit" onClick={buttonLogout}>
-                Logout
-              </Button>
-            ) : (
-              <Button color="inherit" onClick={buttonLogin}>
-                Login
-              </Button>
-            )}
-          </ListItem>
-
-          <ListItem>{user ? <strong>Halo, {user.email}</strong> : ""}</ListItem>
         </List>
-      </Typography>
+      </Box>
     </AppBar>
   );
 };
