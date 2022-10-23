@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Box, Typography, Container } from "@mui/material";
 import { CardNews } from "../components/CardNews";
 
+
 const HeadLine = () => {
   const [headline, setHeadline] = useState([]);
 
@@ -32,6 +33,7 @@ const HeadLine = () => {
         </Box>
       </Box>
     </Container>
+  
   );
 };
 

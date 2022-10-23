@@ -38,7 +38,7 @@ const BusinessPage = () => {
           </Box>
         </Box>
       </Container>
-      <Footer />
+      <Footer loading="lazy"/>
     </ThemeProvider>
   );
 };
