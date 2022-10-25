@@ -34,12 +34,16 @@ const NewsDetail = () => {
                 <CardMedia component="img" sx={{ height: 500, width: 700 }} image={card.image} alt={card.title}></CardMedia>
               </Grid>
 
-              <Typography variant="h5" textAlign="center" sx={{ m: 4 }}>
+              <Typography className="title" variant="h5" textAlign="center" sx={{ m: 4 }}>
                 {card.title}
               </Typography>
-              <Typography variant="body2">{card.description}</Typography>
-              <Typography variant="body1">{card.content}</Typography>
-              <Typography sx={{ mt: 5 }}>
+              <Typography className="description" variant="body2">
+                {card.description}
+              </Typography>
+              <Typography className="description" variant="body1">
+                {card.content}
+              </Typography>
+              <Typography className="description" sx={{ mt: 5 }}>
                 <a href={card.url}>Read more</a> {card.source.name}
               </Typography>
             </Box>
