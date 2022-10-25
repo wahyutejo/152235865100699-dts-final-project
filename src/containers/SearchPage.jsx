@@ -15,7 +15,7 @@ const SearchPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const responseSearch = await axios.get(`https://gnews.io/api/v4/search?q=${searchValue}&token=0dcd7f431e9522047ef1cbd7432dc772&lang=en`);
+        const responseSearch = await axios.get(`https://gnews.io/api/v4/search?q=${searchValue}&token=${process.env.REACT_APP_GNEWS_KEY}&lang=en`);
         setSearch(responseSearch.data.articles);
         console.log(setSearch);
       } catch (err) {
