@@ -13,15 +13,13 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import MailIcon from "@mui/icons-material/Mail";
 import { useNavigate } from "react-router-dom";
 import HomeIcon from "@mui/icons-material/Home";
 import SearchBar from "./Search";
 import "../App.css";
 
-const drawerWidth = 240;
+const drawerWidth = 200;
 
 const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })(({ theme, open }) => ({
   flexGrow: 1,
@@ -143,9 +141,6 @@ export default function PersistentDrawerRight() {
         <List>
           <ListItem disablePadding>
             <ListItemButton>
-              <ListItemIcon>
-                <MailIcon />
-              </ListItemIcon>
               <ListItemText onClick={business} sx={{ "&:hover": { cursor: "pointer" } }}>
                 Business
               </ListItemText>
@@ -153,9 +148,6 @@ export default function PersistentDrawerRight() {
           </ListItem>
           <ListItem disablePadding>
             <ListItemButton>
-              <ListItemIcon>
-                <MailIcon />
-              </ListItemIcon>
               <ListItemText onClick={entertainment} sx={{ "&:hover": { cursor: "pointer" } }}>
                 Entertainment
               </ListItemText>
@@ -163,9 +155,6 @@ export default function PersistentDrawerRight() {
           </ListItem>
           <ListItem disablePadding>
             <ListItemButton>
-              <ListItemIcon>
-                <MailIcon />
-              </ListItemIcon>
               <ListItemText onClick={health} sx={{ "&:hover": { cursor: "pointer" } }}>
                 Health
               </ListItemText>
@@ -173,9 +162,6 @@ export default function PersistentDrawerRight() {
           </ListItem>
           <ListItem disablePadding>
             <ListItemButton>
-              <ListItemIcon>
-                <MailIcon />
-              </ListItemIcon>
               <ListItemText onClick={nation} sx={{ "&:hover": { cursor: "pointer" } }}>
                 Nation
               </ListItemText>
@@ -183,20 +169,13 @@ export default function PersistentDrawerRight() {
           </ListItem>
           <ListItem disablePadding>
             <ListItemButton>
-              <ListItemIcon>
-                <MailIcon />
-              </ListItemIcon>
               <ListItemText onClick={science} sx={{ "&:hover": { cursor: "pointer" } }}>
                 Science
               </ListItemText>
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
-            {" "}
             <ListItemButton>
-              <ListItemIcon>
-                <MailIcon />
-              </ListItemIcon>
               <ListItemText onClick={sports} sx={{ "&:hover": { cursor: "pointer" } }}>
                 Sports
               </ListItemText>
@@ -204,9 +183,6 @@ export default function PersistentDrawerRight() {
           </ListItem>
           <ListItem disablePadding>
             <ListItemButton>
-              <ListItemIcon>
-                <MailIcon />
-              </ListItemIcon>
               <ListItemText onClick={technology} sx={{ "&:hover": { cursor: "pointer" } }}>
                 Technology
               </ListItemText>
@@ -214,9 +190,6 @@ export default function PersistentDrawerRight() {
           </ListItem>
           <ListItem disablePadding>
             <ListItemButton>
-              <ListItemIcon>
-                <MailIcon />
-              </ListItemIcon>
               <ListItemText onClick={world} sx={{ "&:hover": { cursor: "pointer" } }}>
                 World
               </ListItemText>

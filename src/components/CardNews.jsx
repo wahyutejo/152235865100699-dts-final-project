@@ -22,7 +22,9 @@ export function CardNews(props) {
           <Typography variant="7" sx={{ mb: 1, fontStyle: "italic" }}>
             {date}
           </Typography>
-          <Typography variant="7">{props.news.description}</Typography>
+          <Typography className="description" variant="7">
+            {props.news.description}
+          </Typography>
           <Typography sx={{ mt: 1 }}>
             <a href={props.news.url} target="_blank" rel="noopener noreferrer">
               Read more
