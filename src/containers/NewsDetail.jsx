@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Box, Typography, CardMedia, Grid, ThemeProvider } from "@mui/material";
 import { useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import Drawer from "../components/NavbarDrawer";
 import Footer from "../components/Footer";
 import theme from "../themes/Theme";
 
@@ -25,6 +26,8 @@ const NewsDetail = () => {
   return (
     <ThemeProvider theme={theme}>
       <Navbar />
+      <Drawer />
+
       <Box sx={{ m: 10 }}>
         {headline
           .filter((card) => card.publishedAt === publishedAt)

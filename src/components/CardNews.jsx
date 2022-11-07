@@ -14,8 +14,8 @@ export function CardNews(props) {
       </Box>
       <Box className="card-box">
         <Box className="card-box-inner" sx={{ display: "flex", flexDirection: "column" }}>
-          <Typography className="title" variant="h5" sx={{ "&:hover": { cursor: "pointer" }, mb: 2 }}>
-            <Link to={`/detail/${props.news.publishedAt}`} style={{ textDecoration: "none", color: "black" }}>
+          <Typography className="title" variant="h5" sx={{ "&:hover": { cursor: "pointer" }, mb: 4 }}>
+            <Link to={`/detail/${props.news.publishedAt}`} style={{ textDecoration: "none", color: "#5F9DF7" }}>
               {props.news.title}
             </Link>
           </Typography>

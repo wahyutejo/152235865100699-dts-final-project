@@ -128,6 +128,8 @@ export default function PersistentDrawerRight() {
           flexShrink: 0,
           "& .MuiDrawer-paper": {
             width: drawerWidth,
+            background: "linear-gradient(45deg, #a70000 30%, #000000 90%)",
+            color: "#fff",
           },
         }}
         variant="persistent"
@@ -135,9 +137,11 @@ export default function PersistentDrawerRight() {
         open={open}
       >
         <DrawerHeader>
-          <IconButton onClick={handleDrawerClose}>{theme.direction === "rtl" ? <ChevronLeftIcon /> : <ChevronRightIcon />}</IconButton>
+          <IconButton color="inherit" onClick={handleDrawerClose}>
+            {theme.direction === "rtl" ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+          </IconButton>
         </DrawerHeader>
-        <Divider />
+        <Divider color="inherit" />
         <List>
           <ListItem disablePadding>
             <ListItemButton>
@@ -196,7 +200,6 @@ export default function PersistentDrawerRight() {
             </ListItemButton>
           </ListItem>
         </List>
-        <Divider />
       </Drawer>
     </Box>
   );

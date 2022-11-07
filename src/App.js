@@ -15,7 +15,7 @@ function App() {
         <Box>
           <HeadLine />
         </Box>
-	<Footer />
+        <Footer />
       </ThemeProvider>
     </>
   );
