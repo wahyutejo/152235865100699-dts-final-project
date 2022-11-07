@@ -2,7 +2,7 @@ import axios from "axios";
 
 const headlineApi = axios.create({
   baseURL: "https://gnews.io/api/v4",
-  params: { topic: "breaking-news", lang: "en", token: "0dcd7f431e9522047ef1cbd7432dc772" },
+  params: { topic: "breaking-news", lang: "en", token: process.env.REACT_APP_GNEWS_KEY },
 });
 const businessApi = axios.create({
   baseURL: "https://gnews.io/api/v4",

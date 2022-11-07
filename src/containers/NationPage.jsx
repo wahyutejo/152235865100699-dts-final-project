@@ -26,7 +26,7 @@ const NationPage = () => {
     <ThemeProvider theme={theme}>
       <Navbar />
       <Drawer />
-      <Container>
+      <Container sx={{minHeight: "80vh"}}>
         <Box>
           <Typography variant="h5" sx={{ px: 5 }}>
             NATION

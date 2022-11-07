@@ -19,9 +19,9 @@ const HeadLine = () => {
   }, []);
 
   return (
-    <Container>
+    <Container sx={{minHeight: "80vh"}}>
       <Box>
-        <Typography variant="h5" sx={{ px: 9 }}>
+        <Typography variant="h5" sx={{ px: 5 }}>
           BREAKING NEWS
         </Typography>
         <Box>

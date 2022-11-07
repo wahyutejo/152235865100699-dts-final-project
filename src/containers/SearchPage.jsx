@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Box, Typography, ThemeProvider, Container } from "@mui/material";
+import { Box, Typography, ThemeProvider, Container, CircularProgress } from "@mui/material";
 import theme from "../themes/Theme";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -11,6 +11,7 @@ import axios from "axios";
 const SearchPage = () => {
   const [searchNews, setSearch] = useState([]);
   const { searchValue } = useParams();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,21 +24,24 @@ const SearchPage = () => {
       }
     };
     fetchData();
-  }, [searchValue]);
+    setLoading(false);
+  }, [searchValue, setLoading]);
 
   return (
     <ThemeProvider theme={theme}>
       <Navbar />
       <Drawer />
-      <Container>
+      <Container sx={{ minHeight: "80vh" }}>
         <Box>
           <Typography variant="h5" sx={{ px: 5 }}>
             Search
           </Typography>
-          <Box>
-            {searchNews.length === 0 ? (
+          <Box sx={{ mt: 5 }}>
+            {loading ? (
+              <CircularProgress />
+            ) : searchNews.length === 0 ? (
               <Typography variant="h4" sx={{ textAlign: "center" }}>
-                Kata Kunci Tidak Ditemukan
+                Keyword Not Found
               </Typography>
             ) : (
               searchNews.map((news) => {

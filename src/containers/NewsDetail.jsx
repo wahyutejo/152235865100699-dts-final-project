@@ -27,8 +27,7 @@ const NewsDetail = () => {
     <ThemeProvider theme={theme}>
       <Navbar />
       <Drawer />
-
-      <Box sx={{ m: 10 }}>
+      <Box sx={{ minHeight: "80vh" }}>
         {headline
           .filter((card) => card.publishedAt === publishedAt)
           .map((card) => (
@@ -36,18 +35,16 @@ const NewsDetail = () => {
               <Grid container justifyContent="center" alignItems="center">
                 <CardMedia component="img" sx={{ height: 500, width: 700 }} image={card.image} alt={card.title}></CardMedia>
               </Grid>
-
               <Typography className="title" variant="h5" textAlign="center" sx={{ m: 4 }}>
                 {card.title}
               </Typography>
-              <Typography className="description" variant="body2">
-                {card.description}
-              </Typography>
-              <Typography className="description" variant="body1">
+              <Typography variant="body1" sx={{ maxWidth: "95vw", pl: 3, pr: 2 }}>
                 {card.content}
               </Typography>
-              <Typography className="description" sx={{ mt: 5 }}>
-                <a href={card.url}>Read more</a> {card.source.name}
+              <Typography sx={{ mt: 5, pl: 3 }}>
+                <a href={card.url} style={{ textDecoration: "none" }}>
+                  Read more on {card.source.name}
+                </a>
               </Typography>
             </Box>
           ))}
